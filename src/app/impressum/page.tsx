@@ -3,6 +3,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Impressum",
   description: "Rechtliche Angaben gemäß § 5 DDG.",
+  alternates: {
+    canonical: "/impressum",
+  },
 };
 
 export default function ImpressumPage() {

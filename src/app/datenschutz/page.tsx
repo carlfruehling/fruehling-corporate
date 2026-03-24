@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
     "Informationen zur Verarbeitung personenbezogener Daten auf fruehling-corporate.de.",
+  alternates: {
+    canonical: "/datenschutz",
+  },
 };
 
 export default function DatenschutzPage() {

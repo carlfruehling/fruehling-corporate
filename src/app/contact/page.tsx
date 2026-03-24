@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: "Kontakt",
   description:
     "Kontaktformular für unverbindliche Anfragen zur Due Diligence und Unternehmensanalyse.",
+  alternates: {
+    canonical: "/contact",
+  },
+  openGraph: {
+    title: "Kontakt",
+    description:
+      "Kontaktformular für unverbindliche Anfragen zur Due Diligence und Unternehmensanalyse.",
+    url: "https://fruehling-corporate.de/contact",
+  },
 };
 
 export default async function ContactPage({ searchParams }: ContactPageProps) {

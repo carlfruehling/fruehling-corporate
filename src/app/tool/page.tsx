@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: "Tool",
   description:
     "Weiterleitung zum interaktiven Rechentool für die Analyse von Fertigungsaufträgen.",
+  alternates: {
+    canonical: "/tool",
+  },
+  openGraph: {
+    title: "Tool",
+    description:
+      "Weiterleitung zum interaktiven Rechentool für die Analyse von Fertigungsaufträgen.",
+    url: "https://fruehling-corporate.de/tool",
+  },
 };
 
 export default function ToolPage() {

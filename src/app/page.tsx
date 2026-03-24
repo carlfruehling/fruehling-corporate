@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   title: "Due Diligence für mittelständische Unternehmen",
   description:
     "Transparente Analyse von Chancen und Risiken bei Unternehmensübernahmen im Mittelstand.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Due Diligence für mittelständische Unternehmen",
+    description:
+      "Transparente Analyse von Chancen und Risiken bei Unternehmensübernahmen im Mittelstand.",
+    url: "https://fruehling-corporate.de",
+  },
 };
 
 export default function Home() {

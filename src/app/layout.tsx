@@ -16,15 +16,52 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fruehling-corporate.de"),
+  applicationName: "Fruehling Corporate",
   title: {
     default: "Fruehling Corporate",
     template: "%s | Fruehling Corporate",
   },
   description:
     "Due Diligence und Unternehmensanalyse für mittelständische Unternehmen.",
+  keywords: [
+    "Due Diligence",
+    "Unternehmensanalyse",
+    "Mittelstand",
+    "KMU",
+    "Unternehmensübernahme",
+    "Transaktionsberatung",
+  ],
+  authors: [{ name: "Fruehling Corporate GmbH" }],
+  creator: "Fruehling Corporate GmbH",
+  publisher: "Fruehling Corporate GmbH",
+  alternates: {
+    canonical: "/",
+  },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: "https://fruehling-corporate.de",
+    siteName: "Fruehling Corporate",
+    title: "Fruehling Corporate",
+    description:
+      "Due Diligence und Unternehmensanalyse für mittelständische Unternehmen.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Fruehling Corporate",
+    description:
+      "Due Diligence und Unternehmensanalyse für mittelständische Unternehmen.",
   },
 };
 
