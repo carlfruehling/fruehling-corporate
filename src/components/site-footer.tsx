@@ -8,6 +8,16 @@ export function SiteFooter() {
         <nav aria-label="Rechtliches">
           <ul className="flex gap-4">
             <li>
+              <a
+                href="https://www.linkedin.com/in/cfruehling/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-foreground"
+              >
+                LinkedIn
+              </a>
+            </li>
+            <li>
               <Link href="/impressum" className="transition hover:text-foreground">
                 Impressum
               </Link>
