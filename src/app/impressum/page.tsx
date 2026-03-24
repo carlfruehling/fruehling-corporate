@@ -18,9 +18,9 @@ export default function ImpressumPage() {
           Sülldorfer Landstraße 227a
           <br />
           22589 Hamburg
-          <br />
+          <br /> <br />
           Deutschland
-          <br />
+          <br /> <br />
           Geschäftsführer: Carl Frühling
           <br />
           Registergericht: Amtsgericht Hamburg

@@ -20,7 +20,7 @@ export default function ToolPage() {
         rel="noopener noreferrer"
         className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium !text-white transition hover:bg-accent-strong"
       >
-        production-profit-tool.fruehling-corporate.de öffnen
+        Zum Produktions-Profit-Tool
       </a>
     </div>
   );
