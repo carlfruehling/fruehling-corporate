@@ -98,7 +98,7 @@ export default function Home() {
         <div className="mt-6">
           <Link
             href="/contact"
-            className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-white transition hover:bg-accent-strong"
+            className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium !text-white transition hover:bg-accent-strong"
           >
             Kontakt aufnehmen
           </Link>
