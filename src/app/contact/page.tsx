@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 type ContactPageProps = {
   searchParams?: Promise<{ status?: string }> | { status?: string };
@@ -130,7 +129,11 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             className="mt-1 h-4 w-4 rounded border-border"
           />
           <span>
-            Ich habe die <Link href="/datenschutz" className="underline">Datenschutzerklärung</Link> gelesen.
+            Ich stimme der{" "}
+            <a href="/datenschutz" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
+              Datenschutzerklärung
+            </a>{" "}
+            zu.
           </span>
         </label>
 
