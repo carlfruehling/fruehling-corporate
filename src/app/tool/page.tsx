@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tool",
+  title: "Produktions-Profit-Tool | Fertigungsaufträge analysieren",
   description:
-    "Weiterleitung zum interaktiven Rechentool für die Analyse von Fertigungsaufträgen.",
+    "Interaktives Produktions-Profit-Tool zur schnellen Analyse von Fertigungsaufträgen, Deckungsbeiträgen und Ergebnishebeln.",
+  keywords: [
+    "Produktions-Profit-Tool",
+    "Fertigungsauftraege analysieren",
+    "Deckungsbeitrag Tool",
+    "Kalkulation Produktion",
+  ],
   alternates: {
     canonical: "/tool",
   },
   openGraph: {
-    title: "Tool",
+    title: "Produktions-Profit-Tool | Fertigungsaufträge analysieren",
     description:
-      "Weiterleitung zum interaktiven Rechentool für die Analyse von Fertigungsaufträgen.",
+      "Interaktives Produktions-Profit-Tool zur schnellen Analyse von Fertigungsaufträgen, Deckungsbeiträgen und Ergebnishebeln.",
     url: "https://fruehling-corporate.de/tool",
   },
 };
@@ -27,7 +33,7 @@ export default function ToolPage() {
         href="https://production-profit-tool.fruehling-corporate.de"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium !text-white transition hover:bg-accent-strong"
+        className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-white! transition hover:bg-accent-strong"
       >
         Zum Produktions-Profit-Tool
       </a>

@@ -3,9 +3,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
-    "Informationen zur Verarbeitung personenbezogener Daten auf fruehling-corporate.de.",
+    "Datenschutzerklärung mit Informationen zur Verarbeitung personenbezogener Daten auf fruehling-corporate.de.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/datenschutz",
+  },
+  openGraph: {
+    title: "Datenschutzerklärung | Fruehling Corporate",
+    description:
+      "Datenschutzerklärung mit Informationen zur Verarbeitung personenbezogener Daten auf fruehling-corporate.de.",
+    url: "https://fruehling-corporate.de/datenschutz",
   },
 };
 
@@ -48,8 +58,9 @@ export default function DatenschutzPage() {
         <p className="leading-8 text-muted-foreground">
           Bei Nutzung des Kontaktformulars werden die von Ihnen eingegebenen
           Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung der Anfrage
-          verarbeitet. In der aktuellen technischen Ausgestaltung erfolgt keine
-          automatische Speicherung in einer Website-Datenbank.
+          verarbeitet. Zusätzlich werden Anfragen aus Kontakt- und
+          Downloadformular in einer Datenbank gespeichert, um Ihre Anfrage
+          nachvollziehbar zu dokumentieren und zu bearbeiten.
         </p>
       </section>
 

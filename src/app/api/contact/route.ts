@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { saveLead } from "../../../lib/lead-storage";
 
 const FROM_EMAIL = "Fruehling Corporate <kontakt@mail.fruehling-corporate.de>";
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "cfruehling@live.de";
@@ -37,6 +38,18 @@ export async function POST(request: Request) {
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY);
+
+  try {
+    await saveLead({
+      source: "contact",
+      name,
+      email,
+      message,
+      privacyAccepted: true,
+    });
+  } catch (error) {
+    console.error("Could not save contact lead in Supabase", error);
+  }
 
   try {
     await resend.emails.send({

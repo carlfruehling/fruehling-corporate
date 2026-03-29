@@ -6,16 +6,22 @@ type ContactPageProps = {
 };
 
 export const metadata: Metadata = {
-  title: "Kontakt",
+  title: "Kontakt | Anfrage zur Due Diligence Beratung",
   description:
-    "Kontaktformular für unverbindliche Anfragen zur Due Diligence und Unternehmensanalyse.",
+    "Kontakt für unverbindliche Anfragen zu Operational Due Diligence, Unternehmensanalyse und Transaktionsbegleitung im Mittelstand.",
+  keywords: [
+    "Due Diligence Kontakt",
+    "Unternehmensanalyse Anfrage",
+    "M&A Beratung Kontakt",
+    "Due Diligence Beratung Hamburg",
+  ],
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
-    title: "Kontakt",
+    title: "Kontakt | Anfrage zur Due Diligence Beratung",
     description:
-      "Kontaktformular für unverbindliche Anfragen zur Due Diligence und Unternehmensanalyse.",
+      "Kontakt für unverbindliche Anfragen zu Operational Due Diligence, Unternehmensanalyse und Transaktionsbegleitung im Mittelstand.",
     url: "https://fruehling-corporate.de/contact",
   },
 };
@@ -130,7 +136,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
 
         <button
           type="submit"
-          className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium !text-white transition hover:bg-accent-strong"
+          className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-white! transition hover:bg-accent-strong"
         >
           Anfrage senden
         </button>

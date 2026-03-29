@@ -2,9 +2,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Rechtliche Angaben gemäß § 5 DDG.",
+  description: "Impressum der Fruehling Corporate GmbH mit allen Pflichtangaben gemäß § 5 DDG.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/impressum",
+  },
+  openGraph: {
+    title: "Impressum | Fruehling Corporate",
+    description: "Impressum der Fruehling Corporate GmbH mit allen Pflichtangaben gemäß § 5 DDG.",
+    url: "https://fruehling-corporate.de/impressum",
   },
 };
 

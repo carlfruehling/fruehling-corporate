@@ -1,0 +1,184 @@
+import type { Metadata } from "next";
+
+type DownloadsPageProps = {
+  searchParams?: Promise<{ status?: string }> | { status?: string };
+};
+
+export const metadata: Metadata = {
+  title: "Downloads | Broschüre und Playbook für Zulieferer",
+  description:
+    "Kostenlose Downloads: Broschüre zur Operational Due Diligence und Playbook für Zulieferer zur Preisverhandlung mit OEMs.",
+  keywords: [
+    "Operational Due Diligence PDF",
+    "Playbook Zulieferer OEM",
+    "Preisverhandlung OEM",
+    "Due Diligence Broschuere",
+  ],
+  alternates: {
+    canonical: "/downloads",
+  },
+  openGraph: {
+    title: "Downloads | Broschüre und Playbook für Zulieferer",
+    description:
+      "Kostenlose Downloads: Broschüre zur Operational Due Diligence und Playbook für Zulieferer zur Preisverhandlung mit OEMs.",
+    url: "https://fruehling-corporate.de/downloads",
+  },
+};
+
+const downloads = [
+  {
+    title: "Fruehling Corporate – Broschüre",
+    description:
+      "Überblick über Leistungen, Vorgehensweise und Mehrwert bei der Operational Due Diligence für mittelständische Unternehmen.",
+    href: "/Operational Due Diligence_Fruehling Corporate.pdf",
+    label: "PDF herunterladen",
+  },
+];
+
+export default async function DownloadsPage({ searchParams }: DownloadsPageProps) {
+  const params = await Promise.resolve(searchParams);
+  const status = params?.status;
+
+  return (
+    <div className="space-y-8">
+      <header className="space-y-3">
+        <h1 className="text-3xl font-semibold tracking-tight text-foreground">
+          Downloads
+        </h1>
+        <p className="max-w-3xl leading-8 text-muted-foreground">
+          Hier finden Sie weiterführende Unterlagen zum kostenlosen Download.
+        </p>
+      </header>
+
+      {status === "playbook-sent" && (
+        <p className="max-w-2xl rounded-md border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+          Vielen Dank. Das Playbook wurde soeben an Ihre E-Mail-Adresse versendet.
+        </p>
+      )}
+
+      {status === "playbook-validation-error" && (
+        <p className="max-w-2xl rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          Bitte füllen Sie alle Pflichtfelder korrekt aus und bestätigen Sie die
+          Datenschutzerklärung.
+        </p>
+      )}
+
+      {(status === "playbook-config-error" || status === "playbook-send-error") && (
+        <p className="max-w-2xl rounded-md border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-900">
+          Der Versand war aktuell nicht möglich. Bitte schreiben Sie uns direkt
+          an cfruehling@live.de.
+        </p>
+      )}
+
+      <ul className="space-y-4">
+        {downloads.map((item) => (
+          <li
+            key={item.href}
+            className="flex flex-col gap-4 rounded-xl border border-border bg-surface p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8"
+          >
+            <div className="space-y-1">
+              <p className="font-semibold text-foreground">{item.title}</p>
+              <p className="max-w-xl text-sm leading-7 text-muted-foreground">
+                {item.description}
+              </p>
+            </div>
+            <a
+              href={item.href}
+              download
+              className="shrink-0 rounded-lg border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-surface"
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <section className="rounded-xl border border-border bg-surface p-7 sm:p-8">
+        <div className="space-y-2">
+          <h2 className="text-xl font-semibold tracking-tight text-foreground">
+            Playbook für Zulieferer
+          </h2>
+          <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
+            Das Playbook zum Thema Preisverhandlung mit OEMs senden wir Ihnen
+            nach Angabe Ihrer Kontaktdaten automatisch per E-Mail zu.
+          </p>
+        </div>
+
+        <form method="post" action="/api/playbook-request" className="mt-6 space-y-5">
+          <div className="hidden" aria-hidden="true">
+            <label htmlFor="companyWebsite">Bitte leer lassen</label>
+            <input
+              id="companyWebsite"
+              name="companyWebsite"
+              type="text"
+              autoComplete="off"
+              tabIndex={-1}
+              defaultValue=""
+            />
+          </div>
+
+          <div className="grid gap-5 sm:grid-cols-2">
+            <div className="space-y-2">
+              <label htmlFor="name" className="text-sm font-medium text-foreground">
+                Name*
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label htmlFor="email" className="text-sm font-medium text-foreground">
+                E-Mail*
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label htmlFor="company" className="text-sm font-medium text-foreground">
+              Unternehmen (optional)
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
+            />
+          </div>
+
+          <label className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
+            <input
+              type="checkbox"
+              name="privacyAccepted"
+              value="yes"
+              required
+              className="mt-1 h-4 w-4 rounded border-border"
+            />
+            <span>
+              Ich stimme zu, dass meine Angaben zur Zusendung des Playbooks und
+              für eine mögliche Rückmeldung gespeichert und verarbeitet werden.
+            </span>
+          </label>
+
+          <button
+            type="submit"
+            className="rounded-lg border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-background"
+          >
+            Playbook per E-Mail anfordern
+          </button>
+        </form>
+      </section>
+    </div>
+  );
+}

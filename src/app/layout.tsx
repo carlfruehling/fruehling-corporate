@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fruehling-corporate.de"),
   applicationName: "Fruehling Corporate",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon.svg"],
+    apple: [{ url: "/favicon.svg" }],
+  },
   title: {
     default: "Fruehling Corporate",
     template: "%s | Fruehling Corporate",
