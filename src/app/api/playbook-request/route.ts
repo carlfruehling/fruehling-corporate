@@ -95,13 +95,13 @@ export async function POST(request: Request) {
       text: [
         `Guten Tag ${name},`,
         "",
-        "vielen Dank fuer Ihr Interesse an unserem Playbook.",
-        "Hier koennen Sie es direkt herunterladen:",
+        "vielen Dank für Ihr Interesse an unserem Playbook.",
+        "Hier können Sie es direkt herunterladen:",
         playbookUrl,
         "",
         "Wenn Sie Fragen haben, antworten Sie einfach auf diese E-Mail.",
         "",
-        "Viele Gruesse",
+        "Mit freundlichen Grüßen",
         "Fruehling Corporate",
       ].join("\n"),
     });
