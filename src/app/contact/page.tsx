@@ -37,8 +37,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           Kontakt
         </h1>
         <p className="max-w-3xl leading-8 text-muted-foreground">
-          Nutzen Sie das Formular für eine unverbindliche Anfrage. Die Daten
-          werden ausschließlich zur Bearbeitung Ihrer Nachricht verwendet.
+          Nutzen Sie das Formular für eine unverbindliche Anfrage.
         </p>
       </header>
 
