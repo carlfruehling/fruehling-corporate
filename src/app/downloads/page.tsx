@@ -5,29 +5,30 @@ type DownloadsPageProps = {
 };
 
 export const metadata: Metadata = {
-  title: "Downloads | Broschüre und Playbook für Zulieferer",
+  title: "Downloads und Tools | Broschüre, Playbook und Produktions-Profit-Tool",
   description:
-    "Kostenlose Downloads: Broschüre zur Operational Due Diligence und Playbook für Zulieferer zur Preisverhandlung mit OEMs.",
+    "Kostenlose Downloads und Tools: Broschüre zur Operational Due Diligence, Playbook für Zulieferer und Produktions-Profit-Tool.",
   keywords: [
     "Operational Due Diligence PDF",
     "Playbook Zulieferer OEM",
     "Preisverhandlung OEM",
     "Due Diligence Broschuere",
+    "Produktions-Profit-Tool",
   ],
   alternates: {
     canonical: "/downloads",
   },
   openGraph: {
-    title: "Downloads | Broschüre und Playbook für Zulieferer",
+    title: "Downloads und Tools | Broschüre, Playbook und Produktions-Profit-Tool",
     description:
-      "Kostenlose Downloads: Broschüre zur Operational Due Diligence und Playbook für Zulieferer zur Preisverhandlung mit OEMs.",
+      "Kostenlose Downloads und Tools: Broschüre zur Operational Due Diligence, Playbook für Zulieferer und Produktions-Profit-Tool.",
     url: "https://fruehling-corporate.de/downloads",
   },
 };
 
 const downloads = [
   {
-    title: "Fruehling Corporate – Broschüre",
+    title: "Operational Due Diligence",
     description:
       "Überblick über Leistungen, Vorgehensweise und Mehrwert bei der Operational Due Diligence für mittelständische Unternehmen.",
     href: "/Operational Due Diligence_Fruehling Corporate.pdf",
@@ -74,18 +75,20 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
         {downloads.map((item) => (
           <li
             key={item.href}
-            className="flex flex-col gap-4 rounded-xl border border-border bg-surface p-7 sm:flex-row sm:items-center sm:justify-between sm:p-8"
+            className="flex flex-col gap-6 rounded-xl border border-border bg-surface p-7 sm:p-8"
           >
             <div className="space-y-1">
-              <p className="font-semibold text-foreground">{item.title}</p>
-              <p className="max-w-xl text-sm leading-7 text-muted-foreground">
+              <h2 className="text-xl font-semibold tracking-tight text-foreground">
+                {item.title}
+              </h2>
+              <p className="text-sm leading-7 text-muted-foreground">
                 {item.description}
               </p>
             </div>
             <a
               href={item.href}
               download
-              className="shrink-0 rounded-lg border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-surface"
+              className="inline-flex w-fit items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white! transition hover:bg-accent-strong"
             >
               {item.label}
             </a>
@@ -98,9 +101,8 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
           <h2 className="text-xl font-semibold tracking-tight text-foreground">
             Playbook für Zulieferer
           </h2>
-          <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
-            Das Playbook zum Thema Preisverhandlung mit OEMs senden wir Ihnen
-            nach Angabe Ihrer Kontaktdaten automatisch per E-Mail zu.
+          <p className="text-sm leading-7 text-muted-foreground">
+            Das Playbook zum Thema Preisverhandlung mit OEMs senden wir Ihnen nach Angabe Ihrer Kontaktdaten automatisch per E-Mail zu.
           </p>
         </div>
 
@@ -132,6 +134,18 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
             </div>
 
             <div className="space-y-2">
+              <label htmlFor="company" className="text-sm font-medium text-foreground">
+                Unternehmen (optional)
+              </label>
+              <input
+                id="company"
+                name="company"
+                type="text"
+                className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
+              />
+            </div>
+
+            <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium text-foreground">
                 E-Mail*
               </label>
@@ -143,18 +157,19 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
                 className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
               />
             </div>
-          </div>
 
-          <div className="space-y-2">
-            <label htmlFor="company" className="text-sm font-medium text-foreground">
-              Unternehmen (optional)
-            </label>
-            <input
-              id="company"
-              name="company"
-              type="text"
-              className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
-            />
+            <div className="space-y-2">
+              <label htmlFor="mobilePhone" className="text-sm font-medium text-foreground">
+                Mobilnummer*
+              </label>
+              <input
+                id="mobilePhone"
+                name="mobilePhone"
+                type="tel"
+                required
+                className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
+              />
+            </div>
           </div>
 
           <label className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
@@ -173,11 +188,31 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
 
           <button
             type="submit"
-            className="rounded-lg border border-border bg-white px-5 py-2.5 text-sm font-medium text-foreground transition hover:bg-background"
+            className="inline-flex w-fit items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white! transition hover:bg-accent-strong"
           >
             Playbook per E-Mail anfordern
           </button>
         </form>
+      </section>
+
+            <section className="rounded-xl border border-border bg-surface p-7 sm:p-8">
+        <div className="space-y-2">
+          <h2 className="text-xl font-semibold tracking-tight text-foreground">
+            Produktions-Profit-Tool
+          </h2>
+          <p className="text-sm leading-7 text-muted-foreground">
+            Bessere Preisfindung für Ihre Fertigungsaufträge im Marktvergleich: Ermitteln Sie Vollkosten, Grenzkosten, Kapazitätseffekte und den Deckungsbeitrag pro Stunde im Vergleich zu Benchmark-Aufträgen in unter 60 Sekunden. Die Nutzung des Tools ist kostenlos.
+          </p>
+        </div>
+
+        <a
+          href="https://production-profit-tool.fruehling-corporate.de"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex w-fit items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white! transition hover:bg-accent-strong"
+        >
+          Zum Produktions-Profit-Tool
+        </a>
       </section>
     </div>
   );

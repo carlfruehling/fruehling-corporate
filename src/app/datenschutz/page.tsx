@@ -58,9 +58,11 @@ export default function DatenschutzPage() {
         <p className="leading-8 text-muted-foreground">
           Bei Nutzung des Kontaktformulars werden die von Ihnen eingegebenen
           Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung der Anfrage
-          verarbeitet. Zusätzlich werden Anfragen aus Kontakt- und
-          Downloadformular in einer Datenbank gespeichert, um Ihre Anfrage
-          nachvollziehbar zu dokumentieren und zu bearbeiten.
+          verarbeitet. Bei der Anforderung des Playbooks werden zusaetzlich
+          Name, E-Mail-Adresse, Mobilnummer und optional Unternehmensangaben
+          verarbeitet. Anfragen aus Kontakt- und Downloadformular werden in
+          einer Datenbank gespeichert, um Ihre Anfrage nachvollziehbar zu
+          dokumentieren und zu bearbeiten.
         </p>
       </section>
 

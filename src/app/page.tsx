@@ -68,7 +68,9 @@ export default function Home() {
           Fruehling Corporate
         </p>
         <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Operational Due Diligence für mittelständische Unternehmen
+          Operational Due Diligence 
+          <br />
+          für mittelständische Unternehmen
         </h1>
         <p className="max-w-3xl text-lg leading-8 text-muted-foreground">
           Transparenz bei Chancen und Risiken sowie fundierte
@@ -127,7 +129,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold tracking-tight text-foreground">
           Nächster Schritt
         </h2>
-        <p className="mt-4 max-w-3xl leading-8 text-muted-foreground">
+        <p className="mt-4 leading-8 text-muted-foreground">
           Bei Interesse an einem unverbindlichen Austausch zu einem konkreten
           Vorhaben freuen wir uns auf Ihre Nachricht.
         </p>

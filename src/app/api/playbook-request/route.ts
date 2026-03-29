@@ -19,6 +19,10 @@ function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+function isValidPhone(value: string) {
+  return /^[+0-9()\-\s/]{6,20}$/.test(value);
+}
+
 function getPlaybookUrl(origin: string) {
   const configuredPath = process.env.PLAYBOOK_FILE_PATH ?? DEFAULT_PLAYBOOK_PATH;
 
@@ -37,6 +41,7 @@ export async function POST(request: Request) {
 
   const name = getFirstFormValue(formData, "name");
   const email = getFirstFormValue(formData, "email");
+  const mobilePhone = getFirstFormValue(formData, "mobilePhone");
   const company = getFirstFormValue(formData, "company");
   const privacyAccepted = getFirstFormValue(formData, "privacyAccepted");
   const companyWebsite = getFirstFormValue(formData, "companyWebsite");
@@ -47,7 +52,14 @@ export async function POST(request: Request) {
     return NextResponse.redirect(`${origin}/downloads?status=playbook-sent`, 303);
   }
 
-  if (!name || !email || !privacyAccepted || !isValidEmail(email)) {
+  if (
+    !name ||
+    !email ||
+    !mobilePhone ||
+    !privacyAccepted ||
+    !isValidEmail(email) ||
+    !isValidPhone(mobilePhone)
+  ) {
     return NextResponse.redirect(
       `${origin}/downloads?status=playbook-validation-error`,
       303,
@@ -66,6 +78,7 @@ export async function POST(request: Request) {
       source: "playbook_request",
       name,
       email,
+      mobilePhone,
       company,
       privacyAccepted: true,
     });
@@ -101,6 +114,7 @@ export async function POST(request: Request) {
       text: [
         `Name: ${name}`,
         `E-Mail: ${email}`,
+        `Mobilnummer: ${mobilePhone}`,
         `Unternehmen: ${company || "-"}`,
         `Playbook-Link: ${playbookUrl}`,
         "",

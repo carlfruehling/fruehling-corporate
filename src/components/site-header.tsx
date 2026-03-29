@@ -2,8 +2,7 @@ import Link from "next/link";
 
 const navigation = [
   { href: "/", label: "Start" },
-  { href: "/about", label: "Über mich" },
-  { href: "/tool", label: "Tool" },
+  { href: "/about", label: "About" },
   { href: "/downloads", label: "Downloads" },
   { href: "/contact", label: "Kontakt" },
 ];
@@ -17,7 +16,7 @@ export function SiteHeader() {
             Fruehling Corporate
           </Link>
           <p className="mt-1 text-sm text-muted-foreground">
-            Due Diligence und Analyse von mittelständischen Unternehmen
+            Operational Due Diligence und Bewertung von mittelständischen Unternehmen
           </p>
         </div>
         <nav aria-label="Hauptnavigation">

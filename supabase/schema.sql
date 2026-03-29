@@ -3,8 +3,12 @@ create table if not exists public.inbound_leads (
   source text not null check (source in ('contact', 'playbook_request')),
   name text not null,
   email text not null,
+  mobile_phone text,
   company text,
   message text,
   privacy_accepted boolean not null default false,
   created_at timestamptz not null default now()
 );
+
+alter table if exists public.inbound_leads
+add column if not exists mobile_phone text;

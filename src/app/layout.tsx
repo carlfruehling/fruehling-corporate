@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "KMU",
     "Unternehmensübernahme",
     "Transaktionsberatung",
+    "Unternehmensnachfolge",
   ],
   authors: [{ name: "Fruehling Corporate GmbH" }],
   creator: "Fruehling Corporate GmbH",

@@ -4,6 +4,7 @@ type LeadPayload = {
   source: LeadSource;
   name: string;
   email: string;
+  mobilePhone?: string;
   company?: string;
   message?: string;
   privacyAccepted: boolean;
@@ -33,6 +34,7 @@ export async function saveLead(payload: LeadPayload) {
       source: payload.source,
       name: payload.name,
       email: payload.email,
+      mobile_phone: payload.mobilePhone ?? null,
       company: payload.company ?? null,
       message: payload.message ?? null,
       privacy_accepted: payload.privacyAccepted,
