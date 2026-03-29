@@ -54,15 +54,18 @@ export default function DatenschutzPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-xl font-semibold text-foreground">4. Kontaktformular</h2>
+        <h2 className="text-xl font-semibold text-foreground">4. Kontaktformular und Playbook-Download</h2>
         <p className="leading-8 text-muted-foreground">
           Bei Nutzung des Kontaktformulars werden die von Ihnen eingegebenen
           Daten (Name, E-Mail-Adresse, Nachricht) zur Bearbeitung der Anfrage
-          verarbeitet. Bei der Anforderung des Playbooks werden zusaetzlich
+          verarbeitet. Bei der Anforderung des Playbooks werden zusätzlich
           Name, E-Mail-Adresse, Mobilnummer und optional Unternehmensangaben
-          verarbeitet. Anfragen aus Kontakt- und Downloadformular werden in
-          einer Datenbank gespeichert, um Ihre Anfrage nachvollziehbar zu
-          dokumentieren und zu bearbeiten.
+          erfasst. Diese Daten werden verwendet, um Ihnen das Playbook per
+          E-Mail zuzusenden und für eine mögliche geschäftliche Rückmeldung.
+          Anfragen aus Kontakt- und Downloadformular werden in einer Datenbank
+          gespeichert, um Ihre Anfrage nachvollziehbar zu dokumentieren und zu
+          bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO
+          (Einwilligung).
         </p>
       </section>
 

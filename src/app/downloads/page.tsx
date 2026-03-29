@@ -181,8 +181,11 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
               className="mt-1 h-4 w-4 rounded border-border"
             />
             <span>
-              Ich stimme zu, dass meine Angaben zur Zusendung des Playbooks und
-              für eine mögliche Rückmeldung gespeichert und verarbeitet werden.
+              Ich stimme der{" "}
+              <a href="/datenschutz" className="underline hover:text-foreground" target="_blank" rel="noopener noreferrer">
+                Datenschutzerklärung
+              </a>{" "}
+              zu.
             </span>
           </label>
 
