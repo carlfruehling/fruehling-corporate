@@ -4,7 +4,7 @@ const navigation = [
   { href: "/", label: "Start" },
   { href: "/about", label: "About" },
   { href: "/downloads", label: "Downloads" },
-  { href: "/contact", label: "Kontakt" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -19,17 +19,19 @@ export function SiteHeader() {
             Operational Due Diligence und Bewertung von mittelständischen Unternehmen
           </p>
         </div>
-        <nav aria-label="Hauptnavigation">
-          <ul className="flex flex-wrap gap-5 text-sm font-medium text-muted-foreground">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="transition hover:text-foreground">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="flex flex-col items-start gap-4 sm:items-end">
+          <nav aria-label="Hauptnavigation">
+            <ul className="flex flex-wrap gap-5 text-sm font-medium text-muted-foreground">
+              {navigation.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="transition hover:text-foreground">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
   );

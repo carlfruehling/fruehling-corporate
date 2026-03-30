@@ -1,22 +1,43 @@
 import type { Metadata } from "next";
+import { UserRound, UserRoundCog, UserRoundPlus } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const approachPoints = [
   {
+    icon: "operations",
     title: "Operative Bewertung",
     text: "Prüfung von Prozessen, Organisation, Abhängigkeiten und Skalierbarkeit.",
   },
   {
+    icon: "risk",
     title: "Risikenanalyse",
     text: "Einschätzung von operativen Risiken, Strukturen und Reserven.",
   },
   {
+    icon: "measures",
     title: "Maßnahmenempfehlungen",
-    text: "Bewertung von Maschinenpark, Investionsbedarfen und technologischen Chancen.",
+    text: "Bewertung von Maschinenpark, Investionsbedarfen und Hebeln.",
   },
 ];
 
-const targetGroups = ["Investoren", "Unternehmer", "Nachfolger"];
+const targetGroups = [
+  {
+    icon: "investor",
+    title: "Investoren",
+    text: "Transparenz zu operativen Chancen und Risikotreibern vor dem Abschluss.",
+  },
+  {
+    icon: "owner",
+    title: "Unternehmer",
+    text: "Klare Bewertung von Strukturen, Leistung und Entwicklungspotenzial.",
+  },
+  {
+    icon: "successor",
+    title: "Nachfolger",
+    text: "Belastbare Entscheidungsgrundlagen für eine sichere Übergabephase.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Operational Due Diligence für mittelständische Unternehmen",
@@ -63,19 +84,31 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-      <section className="space-y-6 border-l-4 border-accent pl-6 sm:pl-8">
-        <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground">
-          Fruehling Corporate
-        </p>
-        <h1 className="max-w-3xl text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-          Operational Due Diligence 
-          <br />
-          für mittelständische Unternehmen
-        </h1>
-        <p className="max-w-3xl text-lg leading-8 text-muted-foreground">
-          Transparenz bei Chancen und Risiken sowie fundierte
-          Entscheidungsgrundlagen für Transaktionen und Nachfolgeprozesse.
-        </p>
+      <section className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-sm">
+        <div className="relative h-[46vh] min-h-85 sm:h-[56vh] sm:min-h-115">
+          <Image
+            src="/BannerClean.png"
+            alt="Produktionshalle mit Robotik-Armen"
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-slate-950/40 via-slate-900/28 to-slate-950/44" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full px-7 sm:px-10 lg:px-12">
+              <p className="max-w-5xl text-4xl font-semibold tracking-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] sm:text-6xl lg:text-7xl">
+                Fruehling Corporate GmbH
+              </p>
+              <p className="mt-5 max-w-5xl text-xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] sm:text-4xl">
+                Operational Due Diligence • Strategic Negotiation
+              </p>
+              <p className="mt-3 max-w-5xl text-xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] sm:text-4xl">
+                Risiken erkennen • Effizienz steigern • Margen sichern
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="rounded-xl border border-border bg-surface p-7 sm:p-8">
@@ -98,8 +131,58 @@ export default function Home() {
           {approachPoints.map((point) => (
             <article
               key={point.title}
-              className="rounded-xl border border-border bg-white p-6"
+              className="rounded-xl border border-border bg-white p-6 text-center"
             >
+              <div className="mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full bg-surface text-accent">
+                {point.icon === "operations" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 12h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="M4 7h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    <path d="M4 17h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="16" cy="7" r="2" stroke="currentColor" strokeWidth="1.8" />
+                    <circle cx="14" cy="17" r="2" stroke="currentColor" strokeWidth="1.8" />
+                  </svg>
+                )}
+                {point.icon === "risk" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 4 20 19H4L12 4Z"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinejoin="round"
+                    />
+                    <path d="M12 9v5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    <circle cx="12" cy="17" r="1" fill="currentColor" />
+                  </svg>
+                )}
+                {point.icon === "measures" && (
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="h-9 w-9"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4 15.5 9.5 10 13.5 14 20 7.5"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path d="M20 12V7.5h-4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  </svg>
+                )}
+              </div>
               <h3 className="text-lg font-semibold text-foreground">
                 {point.title}
               </h3>
@@ -113,13 +196,25 @@ export default function Home() {
         <h2 className="text-2xl font-semibold tracking-tight text-foreground">
           Zielgruppen
         </h2>
-        <ul className="grid gap-3 sm:grid-cols-3">
+        <ul className="grid gap-4 md:grid-cols-3">
           {targetGroups.map((group) => (
             <li
-              key={group}
-              className="rounded-xl border border-border bg-white px-5 py-4 font-medium text-foreground"
+              key={group.title}
+              className="rounded-xl border border-border bg-white p-6 text-center"
             >
-              {group}
+              <div className="mx-auto mb-5 inline-flex h-16 w-16 items-center justify-center rounded-full bg-surface text-accent">
+                {group.icon === "investor" && (
+                  <UserRound className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
+                )}
+                {group.icon === "owner" && (
+                  <UserRoundCog className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
+                )}
+                {group.icon === "successor" && (
+                  <UserRoundPlus className="h-9 w-9" strokeWidth={1.8} aria-hidden="true" />
+                )}
+              </div>
+              <p className="text-lg font-semibold text-foreground">{group.title}</p>
+              <p className="mt-3 leading-7 text-muted-foreground">{group.text}</p>
             </li>
           ))}
         </ul>

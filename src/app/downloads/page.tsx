@@ -32,7 +32,7 @@ const downloads = [
     description:
       "Überblick über Leistungen, Vorgehensweise und Mehrwert bei der Operational Due Diligence für mittelständische Unternehmen.",
     href: "/Operational Due Diligence_Fruehling Corporate.pdf",
-    label: "PDF herunterladen",
+    label: "Booklet herunterladen",
   },
 ];
 
@@ -214,7 +214,7 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
           rel="noopener noreferrer"
           className="mt-5 inline-flex w-fit items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white! transition hover:bg-accent-strong"
         >
-          Zum Produktions-Profit-Tool
+          Zum Tool
         </a>
       </section>
     </div>

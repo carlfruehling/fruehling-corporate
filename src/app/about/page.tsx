@@ -95,7 +95,7 @@ export default function AboutPage() {
         <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
           <li>Belastbare Entscheidungsgrundlagen für Investitionen und Transaktionen</li>
           <li>Identifizierte Risiken, Engpässe und operative Red Flags</li>
-          <li>Quantifizierte Effizienz-, Kosten- und Margenpotenziale (typischerweise 10-30 %)</li>
+          <li>Quantifizierte Effizienz-, Kosten- und Margenpotenziale (typ. 10-30 %)</li>
           <li>Verbesserte Verhandlungsergebnisse bei OEMs und Key Accounts</li>
         </ul>
         </section>
