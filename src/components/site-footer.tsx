@@ -9,7 +9,7 @@ export function SiteFooter() {
           <p>Operational Due Diligence und Bewertung von mittelständischen Unternehmen.</p>
         </div>
         <nav aria-label="Rechtliches">
-          <ul className="space-y-2">
+          <ul className="flex flex-wrap gap-4">
             <li>
               <a
                 href="https://www.linkedin.com/in/cfruehling/"
