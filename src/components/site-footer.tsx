@@ -3,10 +3,13 @@ import Link from "next/link";
 export function SiteFooter() {
   return (
     <footer className="border-t border-border py-8">
-      <div className="flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Fruehling Corporate GmbH</p>
+      <div className="flex flex-col gap-6 text-sm text-muted-foreground md:flex-row md:items-start md:justify-between">
+        <div className="max-w-xl space-y-2">
+          <p>© {new Date().getFullYear()} Fruehling Corporate GmbH</p>
+          <p>Operational Due Diligence und Bewertung von mittelständischen Unternehmen.</p>
+        </div>
         <nav aria-label="Rechtliches">
-          <ul className="flex gap-4">
+          <ul className="space-y-2">
             <li>
               <a
                 href="https://www.linkedin.com/in/cfruehling/"
