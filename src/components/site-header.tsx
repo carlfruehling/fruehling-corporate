@@ -68,9 +68,9 @@ export function SiteHeader() {
         <nav
           id={menuId}
           aria-label="Hauptnavigation mobil"
-          className="fixed top-20 right-6 left-6 z-55 sm:hidden"
+          className="fixed top-20 right-6 z-55 sm:hidden"
         >
-          <ul className="flex flex-col gap-2 rounded-2xl border border-border bg-surface p-4 text-sm font-medium shadow-lg">
+          <ul className="flex min-w-56 flex-col items-end gap-1 rounded-2xl border border-border bg-surface p-4 text-right text-lg font-medium shadow-lg">
             {primaryNavigation.map((item) => {
               const isActive = isCurrentPath(pathname, item.href);
 
@@ -78,7 +78,11 @@ export function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={isActive ? "text-foreground" : "text-muted-foreground transition hover:text-foreground"}
+                    className={
+                      isActive
+                        ? "block rounded-lg px-2 py-2 text-foreground"
+                        : "block rounded-lg px-2 py-2 text-muted-foreground transition hover:text-foreground"
+                    }
                     aria-current={isActive ? "page" : undefined}
                     onClick={() => setIsOpen(false)}
                   >
