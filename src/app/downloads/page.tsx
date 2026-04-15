@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 type DownloadsPageProps = {
-  searchParams?: Promise<{ status?: string }> | { status?: string };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export const metadata: Metadata = {
@@ -36,9 +36,10 @@ const downloads = [
   },
 ];
 
-export default async function DownloadsPage({ searchParams }: DownloadsPageProps) {
-  const params = await Promise.resolve(searchParams);
-  const status = params?.status;
+export default async function DownloadsPage(props: DownloadsPageProps) {
+  // 2. Warte direkt auf die searchParams
+  const searchParams = await props.searchParams;
+  const status = searchParams.status;
 
   return (
     <div className="space-y-8">
