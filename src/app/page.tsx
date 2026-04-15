@@ -121,7 +121,7 @@ export default function Home() {
           KMU zur Übernahme gesucht: <br/>
           Sie möchten Ihr Unternehmen an einen externen Nachfolger übergeben und dafür einen finanzierbaren Kaufpreis erhalten? <br/> 
           Gesucht wird ein Unternehmen aus Industrie, Automatisierung, Maschinenbau, Produktion im Großraum Hamburg / Norddeutschland mit: <br/>
-          <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
+          <ul className="max-w-3xl list-disc pl-6 text-muted-foreground marker:text-accent">
             <li> Umsatz 1–10 Mio. € </li>
             <li> EBIT 0,1–1 Mio. € </li>
             <li> Mehr als 10 Mitarbeiter </li> 
