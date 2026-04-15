@@ -104,7 +104,7 @@ export default async function DownloadsPage(props: DownloadsPageProps) {
           </h2>
           <p className="text-sm leading-7 text-muted-foreground">
             Wie Automobilzulieferer es schaffen, auf Augenhöhe zu verhandeln und Ihre Forderungen durchzusetzen: 
-            <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
+            <ul className="max-w-3xl list-disc pl-6 text-muted-foreground marker:text-accent" >
               <li>4 Hauptfehler von Zulieferern in der Verhandlung mit Automobil-OEMs </li>
               <li>3 reale Fallbeispiele wie man Marge, Respekt & Kontrolle zurückgewinnt</li>
               <li>5 Prinzipien erfolgreicher Preisverhandlung in der Serie </li>
