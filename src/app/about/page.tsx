@@ -59,7 +59,7 @@ export default function AboutPage() {
         <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
           <li>Masterstudium des Maschinenbau & Managements an der Technischen Universität München</li>
           <li>Plant Director eines Tier-1-Automobilzulieferers (&gt; P&L Verantwortung für 34 Mio. € Umsatz, &gt;300 Mitarbeitende, &gt;30 % p. a. Wachstum)</li>
-          <li>Director Global Account Management mit &gt;400 Mio. EUR Umsatzverantwortung für internationale OEMs, &gt;10% Preiserhöhung & Zussatzzahlungen durch Verhandlungsführung</li>
+          <li>Director Global Account Management (&gt;400 Mio. EUR Umsatzverantwortung für Volumen-OEMs, &gt;10% Preiserhöhung & Zussatzzahlungen durch Verhandlungsführung, &gt;internationales Sales Team)</li>
           <li>Mehrjährige Verantwortung auf Geschäftsleitungs-, Werk- und Kundenebene</li>
         </ul>
         </section>
