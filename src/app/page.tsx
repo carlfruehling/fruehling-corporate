@@ -119,12 +119,13 @@ export default function Home() {
         </h2>
         <p className="mt-4 leading-8 text-muted-foreground">
           KMU zur Übernahme gesucht: <br/>
-          Sie möchten Ihr Unternehmen an einen externen Nachfolger übergeben und dafür einen finanzierbaren Kaufpreis erhalten? <br/> <br/>
-          Gesucht wird ein Unternehmen aus Industrie, Automatisierung, Maschinenbau oder Produktion im Großraum Hamburg / Norddeutschland. <br/>
-          Grober Suchrahmen: <br/>
+          Sie möchten Ihr Unternehmen an einen externen Nachfolger übergeben und dafür einen finanzierbaren Kaufpreis erhalten? <br/> 
+          Gesucht wird ein Unternehmen aus Industrie, Automatisierung, Maschinenbau oder Produktion im Großraum Hamburg / Norddeutschland mit: <br/>
+          <ul>
           <li> Umsatz 1–10 Mio. € </li>
           <li> EBIT 0,1–1 Mio. € </li>
-          <li> Mehr als 10 Mitarbeiter </li> <br/>
+          <li> Mehr als 10 Mitarbeiter </li> 
+          </ul>
           Eigenkapital für eine erfolgreiche Finanzierung der Übernahme ist vorhanden!
         </p>
         <div className="mt-6">
@@ -142,7 +143,7 @@ export default function Home() {
           Beratung
         </h2>
         <p className="mt-4 max-w-4xl leading-8 text-muted-foreground">
-          Unternehmensübernahmen sind mit Unsicherheit verbunden: <br/>
+          Problemstellung: Unternehmensübernahmen sind mit Unsicherheit verbunden. 
           Verdeckte Risiken in operativen Prozessen und Strukturen können Bewertung,
           Integrationsfähigkeit und Transaktionssicherheit erheblich
           beeinflussen.

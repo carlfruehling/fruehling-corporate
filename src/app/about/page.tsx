@@ -73,6 +73,12 @@ export default function AboutPage() {
           <li>Übernahme der Geschäftsführung angestrebt (Management-Buy-In)</li>
           <li>Einarbeitung von 6-12 Monaten durch Übergeber gewünscht</li>
           <li>Eigenkapital zur Finanzierung in ausreichender Höhe vorhanden</li>
+          <Link
+            href="/contact"
+            className="font-medium text-foreground underline underline-offset-4 hover:text-muted-foreground transition"
+          >
+            <br/>Nehmen Sie Kontakt auf.
+          </Link>
         </ul>
         </section>
 

@@ -6,7 +6,7 @@ export function SiteFooter() {
       <div className="flex flex-col gap-6 text-sm text-muted-foreground md:flex-row md:items-start md:justify-between">
         <div className="max-w-xl space-y-2">
           <p>© {new Date().getFullYear()} Fruehling Corporate GmbH</p>
-          <p>Operational Due Diligence und Bewertung von mittelständischen Unternehmen.</p>
+          <p>Unternehmensnachfolge und Operational Due Diligence von mittelständischen Unternehmen</p>
         </div>
         <nav aria-label="Rechtliches">
           <ul className="flex flex-wrap gap-4">
