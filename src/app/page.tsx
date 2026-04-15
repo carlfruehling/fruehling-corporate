@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Operational Due Diligence für mittelständische Unternehmen",
     description:
-      "Transparente Analyse von Chancen und Risiken bei Unternehmensübernahmen im Mittelstand.",
+      "Analyse von Chancen und Risiken bei Unternehmensübernahmen im Mittelstand.",
     url: "https://fruehling-corporate.de",
   },
 };
@@ -122,9 +122,9 @@ export default function Home() {
           Sie möchten Ihr Unternehmen an einen externen Nachfolger übergeben und dafür einen finanzierbaren Kaufpreis erhalten? <br/> <br/>
           Gesucht wird ein Unternehmen aus Industrie, Automatisierung, Maschinenbau oder Produktion im Großraum Hamburg / Norddeutschland. <br/>
           Grober Suchrahmen: <br/>
-          <li> Umsatz 1–10 Mio. € <li/>
-          <li> EBIT 0,1–1 Mio. € <li/>
-          <li> Mehr als 10 Mitarbeiter <li/> <br/>
+          <li> Umsatz 1–10 Mio. € </li>
+          <li> EBIT 0,1–1 Mio. € </li>
+          <li> Mehr als 10 Mitarbeiter </li> <br/>
           Eigenkapital für eine erfolgreiche Finanzierung der Übernahme ist vorhanden!
         </p>
         <div className="mt-6">
