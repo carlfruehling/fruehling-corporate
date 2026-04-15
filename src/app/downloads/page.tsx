@@ -99,17 +99,15 @@ export default async function DownloadsPage({ searchParams }: DownloadsPageProps
       <section className="rounded-xl border border-border bg-surface p-7 sm:p-8">
         <div className="space-y-2">
           <h2 className="text-xl font-semibold tracking-tight text-foreground">
-            Playbook WIN - Preisverhandlung mit OEMs für Zulieferer
+            Playbook WIN | Preisverhandlung mit OEMs für Zulieferer
           </h2>
           <p className="text-sm leading-7 text-muted-foreground">
-            <br>
             Wie Automobilzulieferer es schaffen, auf Augenhöhe zu verhandeln und Ihre Forderungen durchzusetzen: 
             <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
               <li>4 Hauptfehler von Zulieferern in der Verhandlung mit Automobil-OEMs </li>
               <li>3 reale Fallbeispiele wie man Marge, Respekt & Kontrolle zurückgewinnt</li>
               <li>5 Prinzipien erfolgreicher Preisverhandlung in der Serie </li>
             </ul>
-            </br>
             Das Playbook senden wir Ihnen nach Angabe Ihrer Kontaktdaten automatisch per E-Mail zu.
           </p>
         </div>
