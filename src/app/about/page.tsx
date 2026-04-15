@@ -3,22 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Über Carl Frühling | Expertise in Operational Due Diligence",
+  title: "Über Carl Frühling | Unternehmensnachfolge & Operational Due Diligence",
   description:
-    "Carl Frühling: Hintergrund, Erfahrung und Spezialisierung auf Operational Due Diligence für mittelständische Unternehmen.",
+    "Carl Frühling: Unternehmensnachfolger und Experte für Operational Due Diligence von mittelständischen Unternehmen.",
   keywords: [
     "Carl Frühling",
     "Operational Due Diligence Experte",
     "Due Diligence Berater Hamburg",
     "Mittelstand Beratung",
+    "Unternehmensnachfolger",
+    "MBI",
+    "Management-Buy-In"
   ],
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "Über Carl Frühling | Experte für Operational Due Diligence",
+    title: "Über Carl Frühling | Unternehmensnachfolge & Operational Due Diligence",
     description:
-      "Carl Frühling: Hintergrund, Erfahrung und Spezialisierung auf Operational Due Diligence für mittelständische Unternehmen.",
+      "Carl Frühling: Unternehmensnachfolger und Experte für Operational Due Diligence von mittelständischen Unternehmen.",
     url: "https://fruehling-corporate.de/about",
   },
 };
@@ -42,10 +45,10 @@ export default function AboutPage() {
       <div className="space-y-6">
         <header className="space-y-3 border-l-4 border-accent pl-6 sm:pl-8">
           <p className="text-sm font-medium uppercase tracking-[0.14em] text-muted-foreground">
-            Ihr Experte
+            Ihr Partner
           </p>
           <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            M.Sc. (TUM) Carl O. R. Frühling
+            Carl O. R. Frühling, M.Sc. (TUM)
           </h1>
         </header>
 
@@ -55,24 +58,36 @@ export default function AboutPage() {
         </h2>
         <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
           <li>Masterstudium des Maschinenbau & Managements an der Technischen Universität München</li>
-          <li>Plant Director eines Tier-1-Automobilzulieferers (&gt;300 Mitarbeitende, &gt;30 % p. a. Wachstum)</li>
-          <li>Director Global Account Management mit &gt;400 Mio. EUR Umsatzverantwortung für internationale OEMs</li>
+          <li>Plant Director eines Tier-1-Automobilzulieferers (&gt; P&L Verantwortung für 34 Mio. € Umsatz, &gt;300 Mitarbeitende, &gt;30 % p. a. Wachstum)</li>
+          <li>Director Global Account Management mit &gt;400 Mio. EUR Umsatzverantwortung für internationale OEMs, &gt;10% Preiserhöhung & Zussatzzahlungen durch Verhandlungsführung</li>
           <li>Mehrjährige Verantwortung auf Geschäftsleitungs-, Werk- und Kundenebene</li>
         </ul>
         </section>
 
         <section className="rounded-xl border border-border bg-surface p-7 sm:p-8 space-y-4">
         <h2 className="text-xl font-semibold tracking-tight text-foreground">
-          Kernangebote
+          Unternehmensnachfolge
+        </h2>
+        <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
+          <li>Altersnachfolge in einem gesunden industrienahen KMU gesucht</li>
+          <li>Übernahme der Geschäftsführung angestrebt (Management-Buy-In)</li>
+          <li>Einarbeitung von 6-12 Monaten durch Übergeber gewünscht</li>
+          <li>Eigenkapital zur Finanzierung in ausreichender Höhe vorhanden</li>
+        </ul>
+        </section>
+
+        <section className="rounded-xl border border-border bg-surface p-7 sm:p-8 space-y-4">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground">
+          Beratungsangebote
         </h2>
         <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
           <li>
             Operational Due Diligence: Identifikation operativer Risiken, Bewertung der Skalierbarkeit von Organisation,
-            Prozessen und Kapazitäten, Quantifizierung von Value-Creation-Potenzialen.
+            Prozessen und Kapazitäten, Quantifizierung von Value-Creation-Potenzialen
           </li>
           <li>
             Externe Verhandlungsführung / Commercial Consulting: Strategische Begleitung von OEM- und
-            Key-Account-Verhandlungen, Optimierung von Margen, Risikomanagement und Prozesssteuerung in der Serienfertigung.
+            Key-Account-Verhandlungen, Optimierung von Margen, Risikomanagement und Prozesssteuerung in der Serienfertigung
           </li>
         </ul>
         </section>
@@ -90,7 +105,7 @@ export default function AboutPage() {
 
         <section className="rounded-xl border border-border bg-surface p-7 sm:p-8 space-y-4">
         <h2 className="text-xl font-semibold tracking-tight text-foreground">
-          Ergebnisse
+          Beratungsergebnisse
         </h2>
         <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
           <li>Belastbare Entscheidungsgrundlagen für Investitionen und Transaktionen</li>
@@ -102,7 +117,7 @@ export default function AboutPage() {
 
         <section className="rounded-xl border border-border bg-surface p-7 sm:p-8 space-y-4">
         <h2 className="text-xl font-semibold tracking-tight text-foreground">
-          Verfügbarkeit
+          Verfügbarkeit für Beratung
         </h2>
         <ul className="max-w-3xl list-disc space-y-2 pl-6 leading-8 text-muted-foreground marker:text-accent">
           <li>Stunden- oder tageweise, remote oder vor Ort</li>

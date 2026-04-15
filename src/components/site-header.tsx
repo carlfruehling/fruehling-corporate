@@ -40,7 +40,7 @@ export function SiteHeader() {
               Fruehling Corporate
             </Link>
             <p className="mt-1 text-sm text-muted-foreground">
-              Operational Due Diligence und Bewertung von mittelständischen Unternehmen
+              Unternehmensnachfolge und Operational Due Diligence von mittelständischen Unternehmen
             </p>
           </div>
           <nav aria-label="Hauptnavigation" className="hidden sm:block">

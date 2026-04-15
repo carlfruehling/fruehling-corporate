@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     "Unternehmensanalyse Anfrage",
     "M&A Beratung Kontakt",
     "Due Diligence Beratung Hamburg",
+    "Unternehmensnachfolger",
+    "Investor",
+    "Unternehmenskäufer"
   ],
   alternates: {
     canonical: "/contact",

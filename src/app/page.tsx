@@ -50,6 +50,8 @@ export const metadata: Metadata = {
     "M&A Mittelstand",
     "Unternehmensnachfolge Analyse",
     "Preisverhandlung OEM",
+    "Fruehling Corporate",
+    "Fruehling Corporate GmbH"
   ],
   alternates: {
     canonical: "/",
@@ -101,7 +103,7 @@ export default function Home() {
                 Fruehling Corporate GmbH
               </p>
               <p className="mt-5 max-w-5xl text-xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] sm:text-4xl">
-                Operational Due Diligence • Strategic Negotiation
+                Unternehmensnachfolge • Operational Due Diligence • Strategic Negotiation
               </p>
               <p className="mt-3 max-w-5xl text-xl text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] sm:text-4xl">
                 Risiken erkennen • Effizienz steigern • Margen sichern
@@ -113,11 +115,35 @@ export default function Home() {
 
       <section className="rounded-xl border border-border bg-surface p-7 sm:p-8">
         <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-          Problemstellung
+          +++ Unternehmensnachfolge / Management-Buy-In +++
+        </h2>
+        <p className="mt-4 leading-8 text-muted-foreground">
+          KMU zur Übernahme gesucht: <br/>
+          Sie möchten Ihr Unternehmen an einen externen Nachfolger übergeben und dafür einen finanzierbaren Kaufpreis erhalten? <br/> <br/>
+          Gesucht wird ein Unternehmen aus Industrie, Automatisierung, Maschinenbau oder Produktion im Großraum Hamburg / Norddeutschland. <br/>
+          Grober Suchrahmen: <br/>
+          <li> Umsatz 1–10 Mio. € <li/>
+          <li> EBIT 0,1–1 Mio. € <li/>
+          <li> Mehr als 10 Mitarbeiter <li/> <br/>
+          Eigenkapital für eine erfolgreiche Finanzierung der Übernahme ist vorhanden!
+        </p>
+        <div className="mt-6">
+          <Link
+            href="/about"
+            className="inline-flex items-center rounded-md bg-accent px-5 py-3 text-sm font-medium text-white! transition hover:bg-accent-strong"
+          >
+            Nachfolger-Profil ansehen
+          </Link>
+        </div>
+      </section>
+
+      <section className="rounded-xl border border-border bg-surface p-7 sm:p-8">
+        <h2 className="text-2xl font-semibold tracking-tight text-foreground">
+          Beratung
         </h2>
         <p className="mt-4 max-w-4xl leading-8 text-muted-foreground">
-          Unternehmensübernahmen sind mit Unsicherheit verbunden: Verdeckte
-          Risiken in operativen Prozessen und Strukturen können Bewertung,
+          Unternehmensübernahmen sind mit Unsicherheit verbunden: <br/>
+          Verdeckte Risiken in operativen Prozessen und Strukturen können Bewertung,
           Integrationsfähigkeit und Transaktionssicherheit erheblich
           beeinflussen.
         </p>
