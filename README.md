@@ -88,3 +88,33 @@ es wird dann nur kein Datensatz gespeichert.
 npm run lint
 npm run build
 ```
+
+## Spamschutz des Playbook-Formulars
+
+Vor dem Deployment `supabase/playbook-rate-limit.sql` im Supabase SQL Editor
+mit administrativen Rechten ausführen. `SUPABASE_URL` und
+`SUPABASE_SERVICE_ROLE_KEY` müssen in der Produktionsumgebung gesetzt sein.
+Die Funktion ist ausschließlich für `service_role` freigegeben.
+Ohne funktionierende zentrale Begrenzung wird in Produktion kein Versand
+zugelassen; die Seite zeigt dann einen Versandfehler an.
+
+Die Route validiert alle Felder serverseitig, blockiert Links im Namensfeld,
+prüft den vorhandenen Honeypot `companyWebsite` und begrenzt den Request-Body
+auf 16 KiB. Erst danach werden maximal fünf gültige Anfragen je IP und zwei
+je normalisierter E-Mail-Adresse innerhalb eines festen Stundenfensters
+zugelassen. Auch abgewiesene Wiederholungen zählen innerhalb dieses Fensters.
+Blockierte Anfragen speichern keinen Lead und versenden keine der beiden Mails.
+
+Die IP wird ausschließlich aus dem von Vercel überschriebenen Header
+`x-vercel-forwarded-for` gelesen. Außerhalb von Vercel oder ohne gültigen
+Header gilt ein gemeinsamer IP-Bucket; bei anderem Hosting muss die vertrauenswürdige
+Proxy-Quelle angepasst werden. Identitäten werden als HMAC-SHA256 gespeichert,
+keine Klartext-IP oder E-Mail in der Limiter-Tabelle. Abgelaufene Buckets werden
+bei nachfolgenden Anfragen gelöscht. Lokal ohne Supabase greift eine
+prozesslokale Begrenzung, die nicht für Produktion verwendet wird.
+
+Regressionstests ohne echten Mailversand:
+
+```bash
+node --test tests/playbook-spam.test.cjs
+```

@@ -1,27 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { allowPlaybookRequest, validatePlaybookForm } from "../../../lib/playbook-spam";
 import { saveLead } from "../../../lib/lead-storage";
 
 const FROM_EMAIL = "Fruehling Corporate <kontakt@mail.fruehling-corporate.de>";
 const NOTIFICATION_EMAIL = process.env.CONTACT_TO_EMAIL ?? "cfruehling@live.de";
 const DEFAULT_PLAYBOOK_PATH = "/PLAYBOOK WIN - OEM Verhandlungen meistern.pdf";
-
-function getFirstFormValue(formData: FormData, key: string) {
-  const value = formData.get(key);
-  if (typeof value !== "string") {
-    return "";
-  }
-
-  return value.trim();
-}
-
-function isValidEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-}
-
-function isValidPhone(value: string) {
-  return /^[+0-9()\-\s/]{6,20}$/.test(value);
-}
 
 function getPlaybookUrl(origin: string) {
   const configuredPath = process.env.PLAYBOOK_FILE_PATH ?? DEFAULT_PLAYBOOK_PATH;
@@ -37,33 +21,36 @@ function getPlaybookUrl(origin: string) {
 }
 
 export async function POST(request: Request) {
-  const formData = await request.formData();
-
-  const name = getFirstFormValue(formData, "name");
-  const email = getFirstFormValue(formData, "email");
-  const mobilePhone = getFirstFormValue(formData, "mobilePhone");
-  const company = getFirstFormValue(formData, "company");
-  const privacyAccepted = getFirstFormValue(formData, "privacyAccepted");
-  const companyWebsite = getFirstFormValue(formData, "companyWebsite");
-
   const origin = new URL(request.url).origin;
-
-  if (companyWebsite) {
-    return NextResponse.redirect(`${origin}/downloads?status=playbook-sent`, 303);
-  }
-
-  if (
-    !name ||
-    !email ||
-    !mobilePhone ||
-    !privacyAccepted ||
-    !isValidEmail(email) ||
-    !isValidPhone(mobilePhone)
-  ) {
-    return NextResponse.redirect(
-      `${origin}/downloads?status=playbook-validation-error`,
-      303,
-    );
+  const redirect = (status: string) => NextResponse.redirect(origin + "/downloads?status=" + status, 303);
+  let formData: FormData;
+  try {
+    const reader = request.body?.getReader();
+    if (!reader) return redirect("playbook-validation-error");
+    const chunks: Uint8Array[] = [];
+    let size = 0;
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > 16384) {
+        await reader.cancel();
+        return redirect("playbook-validation-error");
+      }
+      chunks.push(value);
+    }
+    formData = await new Response(Buffer.concat(chunks), {
+      headers: { "Content-Type": request.headers.get("content-type") ?? "" },
+    }).formData();
+  } catch { return redirect("playbook-validation-error"); }
+  const lead = validatePlaybookForm(formData);
+  if (!lead) return redirect("playbook-validation-error");
+  const { name, email, mobilePhone, company } = lead;
+  try {
+    if (!await allowPlaybookRequest(request, email)) return redirect("playbook-rate-limited");
+  } catch {
+    console.error("Playbook spam protection unavailable");
+    return redirect("playbook-config-error");
   }
 
   if (!process.env.RESEND_API_KEY) {
@@ -87,7 +74,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    await resend.emails.send({
+    const delivery = await resend.emails.send({
       from: FROM_EMAIL,
       to: [email],
       replyTo: NOTIFICATION_EMAIL,
@@ -106,7 +93,8 @@ export async function POST(request: Request) {
       ].join("\n"),
     });
 
-    await resend.emails.send({
+    if (delivery.error) throw new Error("Playbook delivery failed");
+    const notification = await resend.emails.send({
       from: FROM_EMAIL,
       to: [NOTIFICATION_EMAIL],
       replyTo: email,
@@ -122,6 +110,7 @@ export async function POST(request: Request) {
       ].join("\n"),
     });
 
+    if (notification.error) throw new Error("Playbook notification failed");
     return NextResponse.redirect(`${origin}/downloads?status=playbook-sent`, 303);
   } catch {
     return NextResponse.redirect(`${origin}/downloads?status=playbook-send-error`, 303);

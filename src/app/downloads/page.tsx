@@ -58,6 +58,12 @@ export default async function DownloadsPage(props: DownloadsPageProps) {
         </p>
       )}
 
+      {status === "playbook-rate-limited" && (
+        <p className="max-w-2xl rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+          Sie haben das Playbook bereits mehrfach angefordert. Bitte versuchen Sie es in einer Stunde erneut.
+        </p>
+      )}
+
       {status === "playbook-validation-error" && (
         <p className="max-w-2xl rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           Bitte füllen Sie alle Pflichtfelder korrekt aus und bestätigen Sie die
@@ -133,7 +139,7 @@ export default async function DownloadsPage(props: DownloadsPageProps) {
               </label>
               <input
                 id="name"
-                name="name"
+                name="name" maxLength={100}
                 type="text"
                 required
                 className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
@@ -146,7 +152,7 @@ export default async function DownloadsPage(props: DownloadsPageProps) {
               </label>
               <input
                 id="company"
-                name="company"
+                name="company" maxLength={160}
                 type="text"
                 className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
               />
@@ -158,7 +164,7 @@ export default async function DownloadsPage(props: DownloadsPageProps) {
               </label>
               <input
                 id="email"
-                name="email"
+                name="email" maxLength={254}
                 type="email"
                 required
                 className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
@@ -171,7 +177,7 @@ export default async function DownloadsPage(props: DownloadsPageProps) {
               </label>
               <input
                 id="mobilePhone"
-                name="mobilePhone"
+                name="mobilePhone" maxLength={25}
                 type="tel"
                 required
                 className="w-full rounded-lg border border-border bg-white px-3 py-2.5 text-sm text-foreground outline-none transition focus:border-foreground"
